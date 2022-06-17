@@ -15,8 +15,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.siteName = 'The Will Will Web';
+      // this.siteName = 'The Will Will Web';
     }, 2000)
+  }
+
+  changeTitle(event: MouseEvent) { // PointerEvent 和 MouseEvent 是父子關係
+    console.log(event.altKey);
+    if(event.altKey) {
+      this.siteName = 'The Will Will Web';
+    }
   }
 
 }
