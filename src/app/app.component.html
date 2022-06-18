@@ -75,8 +75,8 @@
             <div class="widget search">
               <div class="widget-content">
                   <div id="searchbox">
-                    <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" [(ngModel)]="keyword" />
-                    <input type="button" value="搜尋" id="searchbutton" (click)="changeKeyword()" />
+                    <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" #tKeyword [value]="keyword" />
+                    <input type="button" value="搜尋" id="searchbutton" (click)="doSearch(tKeyword.value)" />
                   </div>
                   <p>雙向繫結文字 : {{ keyword }}</p>
               </div>
