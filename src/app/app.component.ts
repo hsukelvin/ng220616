@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   keyword = 'Angular';
   data: any[] = [];
 
@@ -21,6 +21,16 @@ export class AppComponent implements OnInit {
         console.log(this.data);
       }
     })
+
+    setInterval(() => {
+      console.log('setInterval');
+    }, 1000)
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    clearInterval();
   }
 
   doSearch(tKeyword: HTMLInputElement, str: string) {
