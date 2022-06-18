@@ -25,11 +25,23 @@
       <div class="title-wrapper">
         <div class="container">
 
-          <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web" [title]="siteName" [attr.data-testid]="logoId" (click)="changeTitle($event)" />
+          <img
+            src="/assets/images/logo.png"
+            class="pull-left logo"
+            alt="The Will Will Web"
+            [title]="siteName"
+            [attr.data-testid]="logoId"
+            (click)="changeTitle($event)"
+          />
 
           <div class="pull-left">
-            <h1><a href="http://blog.miniasp.com/">{{ siteName }}</a></h1>
-            <h3 [innerHTML]="subTitle"></h3>
+            <h1><a href="http://blog.miniasp.com/">{{ siteName }}</a>{{ counter }}</h1>
+            <h3
+              [innerHTML]="subTitle"
+              [style.font-size.px]="counter + 12"
+              [class.highlight]="counter % 2 === 0"
+            >
+            </h3>
           </div>
 
           <div id="social-icons" class="pull-right social-icon">
