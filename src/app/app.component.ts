@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
     this.http.get<any[]>('/api/articles.json').subscribe({
       next: (result) => {
         this.data = result;
