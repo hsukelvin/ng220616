@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
   keyword = 'Angular';
   currencyCode = 'TWD';
-  data$: Observable<any[]> = of([]);
+  data$: Observable<any[]> = of([]); // 可以確保不會修改到原始資料
 
   constructor(private datasvc: DataService) {
     setTimeout(() => {
